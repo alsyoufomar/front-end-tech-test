@@ -20,7 +20,24 @@ const EventDetails = () => {
         </p>
       </div>
       <div className='application-progress'>
-        <div className='application-progress__sub-container'></div>
+        <div className='application-progress__sub-container'>
+          <img src='./1.svg' alt='complete' />
+          <p>
+            <span>Event details</span>
+          </p>
+        </div>
+        <div className='application-progress__sub-container'>
+          <div className='application-progress__index'>2</div>
+          <p className='incomplete'>
+            <span>Event date / time</span>
+          </p>
+        </div>
+        <div className='application-progress__sub-container'>
+          <div className='application-progress__index'>3</div>
+          <p className='incomplete'>
+            <span>Contact details</span>
+          </p>
+        </div>
       </div>
       <div className='event-details__form-title'>
         <h2>Your event details</h2>
@@ -40,7 +57,7 @@ const EventDetails = () => {
         </div>
         <div className='checkbox-container'>
           <input type='checkbox' />
-          <p></p>
+          <p>Add online elements to event</p>
         </div>
         <textarea name='' id='' rows={10}></textarea>
         <div className='btn-container'>
