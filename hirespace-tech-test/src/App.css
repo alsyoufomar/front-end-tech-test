@@ -1,0 +1,52 @@
+/* Set up */
+
+:root {
+  --ff-primary: Arial, Helvetica, sans-serif;
+  --ff-secondary: 'Inter', sans-serif;
+
+  --fw-reg: 100;
+  --fw-bold: 600;
+
+  --fs-h1: 1.75rem;
+  --fs-h2: 1.4rem;
+  --fs-body: 1.05rem;
+  --fs-details: 0.9rem;
+
+  --clr-accent: #00a82c;
+  --clr-details: #c2c2c2;
+  --clr-details-bg: #eaecf0;
+  --clr-btn: #f7f9fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+p {
+  font-size: var(--fs-body);
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+}
