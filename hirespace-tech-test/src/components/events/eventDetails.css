@@ -1,10 +1,23 @@
 .event-details {
-  width: 50%;
+  width: 55%;
   height: 100%;
 }
 
 .event-details__title h1 {
   margin-bottom: 1rem;
+}
+
+.event-details__title a {
+  font-weight: bold;
+}
+
+.event-details__title span {
+  position: relative;
+}
+
+.event-details__title img {
+  position: absolute;
+  top: 10%;
 }
 
 .application-progress {
@@ -73,6 +86,23 @@ p.incomplete::after {
 
 .event-details__form-title h2 {
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.event-details__form-title h2 span {
+  background-color: #fff;
+  padding-right: 3rem;
+}
+
+.event-details__form-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5em;
+  border-top: 1px solid var(--clr-details);
+  z-index: -1;
 }
 
 .event-details__form-container {
@@ -95,6 +125,15 @@ p.incomplete::after {
   border: solid 1.5px var(--clr-details);
   border-radius: 0.2rem;
   margin: 0.8rem 0;
+  padding: 0 0.5rem;
+}
+
+.input-container select:invalid {
+  color: var(--clr-details);
+}
+
+::placeholder {
+  color: var(--clr-details);
 }
 
 textarea {
@@ -103,7 +142,10 @@ textarea {
 
   border: solid 1.5px var(--clr-details);
   border-radius: 0.2rem;
-  margin: 0.5rem 0;
+  margin-top: 0.5rem;
+
+  padding: 0.5rem 1rem;
+  font-family: var(--ff-primary);
 }
 
 .checkbox-container {
@@ -119,4 +161,22 @@ textarea {
 
 .checkbox-container input {
   margin-right: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 4rem;
+}
+
+.btn {
+  padding: 0 1.3rem;
+  color: #000;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-body);
+  height: 3rem;
+
+  border: none;
+  background-color: var(--clr-btn);
 }

@@ -59,7 +59,10 @@ p {
 }
 
 .event-hero {
-  width: 50%;
+  width: 45%;
   background: url(../public/image.png) no-repeat center top;
   background-size: cover;
+
+  margin-left: 6rem;
+  margin-bottom: 4rem;
 }

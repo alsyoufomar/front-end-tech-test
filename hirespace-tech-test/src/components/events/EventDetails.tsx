@@ -1,6 +1,54 @@
 import './eventDetails.css';
+import { useState } from 'react';
+
+type FormState = {
+  eventType: string;
+  area: string;
+  numberOfPeople: number;
+  estimatedSpend: string;
+  venueLayout: string;
+  venueStyle: string;
+  onlineEleIsAdded: boolean;
+  requirements: string;
+};
 
 const EventDetails = () => {
+  const [formData, setFormData] = useState<FormState>({
+    eventType: '',
+    area: '',
+    numberOfPeople: 0,
+    estimatedSpend: '',
+    venueLayout: '',
+    venueStyle: '',
+    onlineEleIsAdded: false,
+    requirements: '',
+  });
+
+  const handleChange = (
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ): void => {
+    const { name, value, type, checked } =
+      event.target as typeof event.target & {
+        name: { value: string };
+        value: { value: string | number };
+        type: { value: string };
+        checked: { value: boolean };
+      };
+    setFormData((prevData) => {
+      return {
+        ...prevData,
+        [name]: type === 'checkbox' ? checked : value,
+      };
+    });
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <div className='event-details'>
       <div className='event-details__title'>
@@ -40,26 +88,90 @@ const EventDetails = () => {
         </div>
       </div>
       <div className='event-details__form-title'>
-        <h2>Your event details</h2>
+        <h2>
+          <span>Your event details</span>
+        </h2>
       </div>
-      <form className='event-details__form-container'>
+      <form onSubmit={handleSubmit} className='event-details__form-container'>
         <div className='input-container'>
-          <select name='' id=''></select>
-          <select name='' id=''></select>
+          <select
+            required
+            name='eventType'
+            value={formData.eventType}
+            onChange={handleChange}>
+            <option disabled value=''>
+              Event Type
+            </option>
+            <option value='Type 1'>Type 1</option>
+            <option value='Type 2'>Type 2</option>
+          </select>
+          <select
+            required
+            name='area'
+            value={formData.area}
+            onChange={handleChange}>
+            <option disabled value=''>
+              Area
+            </option>
+            <option value='Area 1'>Area 1</option>
+            <option value='Area 2'>Area 2</option>
+          </select>
         </div>
         <div className='input-container'>
-          <input type='number' />
-          <input type='text' />
+          <input
+            placeholder='Number of people'
+            type='number'
+            onChange={handleChange}
+            name='numberOfPeople'
+            value={formData.numberOfPeople}
+          />
+          <input
+            placeholder='Estimated total event spend'
+            type='text'
+            onChange={handleChange}
+            name='estimatedSpend'
+            value={formData.estimatedSpend}
+          />
         </div>
         <div className='input-container'>
-          <select name='' id=''></select>
-          <select name='' id=''></select>
+          <select
+            required
+            name='venueLayout'
+            value={formData.venueLayout}
+            onChange={handleChange}>
+            <option disabled value=''>
+              Venue layout
+            </option>
+            <option value='layout 1'>layout 1</option>
+            <option value='layout 2'>layout 2</option>
+          </select>
+          <select
+            required
+            name='venueStyle'
+            value={formData.venueStyle}
+            onChange={handleChange}>
+            <option disabled value=''>
+              Venue style
+            </option>
+            <option value='style 1'>style 1</option>
+            <option value='style 2'>style 2</option>
+          </select>
         </div>
         <div className='checkbox-container'>
-          <input type='checkbox' />
+          <input
+            type='checkbox'
+            checked={formData.onlineEleIsAdded}
+            onChange={handleChange}
+            name='onlineEleIsAdded'
+          />
           <p>Add online elements to event</p>
         </div>
-        <textarea name='' id='' rows={10}></textarea>
+        <textarea
+          value={formData.requirements}
+          placeholder='Specific requirements'
+          onChange={handleChange}
+          name='requirements'
+          rows={10}></textarea>
         <div className='btn-container'>
           <button className='btn'>Next</button>
         </div>
