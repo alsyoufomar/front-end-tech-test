@@ -50,3 +50,16 @@ p {
   min-height: 100vh;
   width: 100%;
 }
+
+.event-body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem 3rem;
+}
+
+.event-hero {
+  width: 50%;
+  background: url(../public/image.png) no-repeat center top;
+  background-size: cover;
+}

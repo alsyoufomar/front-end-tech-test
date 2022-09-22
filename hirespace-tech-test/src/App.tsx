@@ -8,7 +8,7 @@ function App() {
       <Header />
       <div className='event-body'>
         <EventDetails />
-        <div className='event-hero'>The nice dude</div>
+        <div className='event-hero'></div>
       </div>
     </div>
   );
