@@ -72,18 +72,21 @@ const EventDetails = () => {
           <img src='./1.svg' alt='complete' />
           <p>
             <span>Event details</span>
+            <span>Details</span>
           </p>
         </div>
         <div className='application-progress__sub-container'>
           <div className='application-progress__index'>2</div>
           <p className='incomplete'>
             <span>Event date / time</span>
+            <span>Date / time</span>
           </p>
         </div>
         <div className='application-progress__sub-container'>
           <div className='application-progress__index'>3</div>
           <p className='incomplete'>
             <span>Contact details</span>
+            <span>Contact</span>
           </p>
         </div>
       </div>

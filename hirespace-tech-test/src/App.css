@@ -66,3 +66,30 @@ p {
   margin-left: 6rem;
   margin-bottom: 4rem;
 }
+@media only screen and (max-width: 995px) {
+  .event-hero {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  :root {
+    --fs-h1: 1.6rem;
+    --fs-h2: 1.3rem;
+    --fs-body: 1rem;
+    --fs-details: 0.8rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  html {
+    font-size: 15px;
+  }
+  :root {
+    --fs-h1: 1.5rem;
+    --fs-body: 0.9rem;
+    --fs-details: 0.7rem;
+  }
+  .event-body {
+    padding: 1rem 1.5rem;
+  }
+}

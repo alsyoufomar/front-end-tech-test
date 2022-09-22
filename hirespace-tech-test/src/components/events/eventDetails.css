@@ -45,6 +45,10 @@
   padding-right: 0.5rem;
 }
 
+.application-progress__sub-container p span:nth-child(2) {
+  display: none;
+}
+
 .application-progress__sub-container p::after {
   content: '';
   position: absolute;
@@ -179,4 +183,19 @@ textarea {
 
   border: none;
   background-color: var(--clr-btn);
+}
+
+@media only screen and (max-width: 995px) {
+  .event-details {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .application-progress__sub-container p span:nth-child(2) {
+    display: inline;
+  }
+
+  .application-progress__sub-container p span:nth-child(1) {
+    display: none;
+  }
 }

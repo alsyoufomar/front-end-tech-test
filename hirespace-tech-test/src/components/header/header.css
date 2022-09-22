@@ -7,3 +7,14 @@
   border-bottom: 1px solid var(--clr-details);
   padding-left: 3rem;
 }
+
+@media only screen and (max-width: 550px) {
+  .header {
+    justify-content: center;
+    height: 4.5rem;
+    padding-left: 0;
+  }
+  .header img {
+    height: 2.5rem;
+  }
+}
